@@ -10,8 +10,13 @@ import UIKit
 
 class ReadViewController: UIViewController {
 
+    @IBOutlet weak var dreamImageView: UIImageView!
+    @IBOutlet weak var dreamTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dreamTextView.isEditable = false
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +26,10 @@ class ReadViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onTappedDone(_ sender: UIButton) {
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

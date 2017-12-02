@@ -21,7 +21,18 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toInputVC" {
+            print("InputVCに遷移")
+        }
+    }
+    
+    @IBAction func onTappedStart(_ sender: UIButton) {
+        performSegue(withIdentifier: "toInputVC", sender: nil)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

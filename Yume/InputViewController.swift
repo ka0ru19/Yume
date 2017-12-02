@@ -9,7 +9,10 @@
 import UIKit
 
 class InputViewController: UIViewController {
-
+    
+    @IBOutlet weak var dreamImageView: UIImageView!
+    @IBOutlet weak var dreamTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +23,23 @@ class InputViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toReadVC" {
+            print("ReadVCに遷移")
+        }
+    }
+    
+    @IBAction func onTappedStart(_ sender: UIButton) {
+        performSegue(withIdentifier: "toReadVC", sender: nil)
+    }
+    
+    @IBAction func onTappedCancel(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     
 
     /*
