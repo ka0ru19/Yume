@@ -28,19 +28,17 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func onTappedStart(_ sender: UIButton) {
+        FirebaseAuthManager().signInAnonymously(vc: self)
+    }
+    
+}
+
+// MARK: - Firebaseからのレスポンス
+extension StartViewController {
+    func failedSignInAnonymously(message: String) {
+        print(message)
+    }
+    func successSignInAnonymously() {
         performSegue(withIdentifier: "toInputVC", sender: nil)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

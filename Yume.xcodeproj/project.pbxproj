@@ -14,6 +14,8 @@
 		637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A01FD2A82B00469410 /* StartViewController.swift */; };
 		637FE0A31FD2A8C300469410 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A21FD2A8C300469410 /* InputViewController.swift */; };
 		637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A41FD2A8ED00469410 /* ReadViewController.swift */; };
+		637FE0A81FD2C5A600469410 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */; };
+		637FE0AA1FD2C99400469410 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0A91FD2C97500469410 /* GoogleService-Info.plist */; };
 		860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13886008FE00BF8BE73013 /* Pods_Yume.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +29,8 @@
 		637FE0A01FD2A82B00469410 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		637FE0A21FD2A8C300469410 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		637FE0A41FD2A8ED00469410 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
-		637FE0A61FD2AC8900469410 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		637FE0A91FD2C97500469410 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.release.xcconfig"; sourceTree = "<group>"; };
 		FD13886008FE00BF8BE73013 /* Pods_Yume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				637FE08E1FD2A7D100469410 /* AppDelegate.swift */,
+				637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */,
 				637FE0A01FD2A82B00469410 /* StartViewController.swift */,
 				637FE0A21FD2A8C300469410 /* InputViewController.swift */,
 				637FE0A41FD2A8ED00469410 /* ReadViewController.swift */,
@@ -82,7 +86,7 @@
 				637FE0951FD2A7D100469410 /* Assets.xcassets */,
 				637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */,
 				637FE09A1FD2A7D100469410 /* Info.plist */,
-				637FE0A61FD2AC8900469410 /* GoogleService-Info.plist */,
+				637FE0A91FD2C97500469410 /* GoogleService-Info.plist */,
 			);
 			path = Yume;
 			sourceTree = "<group>";
@@ -159,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				637FE0991FD2A7D100469410 /* LaunchScreen.storyboard in Resources */,
+				637FE0AA1FD2C99400469410 /* GoogleService-Info.plist in Resources */,
 				637FE0961FD2A7D100469410 /* Assets.xcassets in Resources */,
 				637FE0941FD2A7D100469410 /* Main.storyboard in Resources */,
 			);
@@ -223,6 +228,7 @@
 				637FE08F1FD2A7D100469410 /* AppDelegate.swift in Sources */,
 				637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */,
 				637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */,
+				637FE0A81FD2C5A600469410 /* FirebaseAuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
