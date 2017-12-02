@@ -30,26 +30,32 @@ class InputViewController: UIViewController {
         }
     }
     
-    @IBAction func onTappedStart(_ sender: UIButton) {
-        performSegue(withIdentifier: "toReadVC", sender: nil)
+    @IBAction func onTappedPost(_ sender: UIButton) {
+        
+        guard let text = dreamTextView.text else {return}
+        if text.characters.count == 0 { return }
+        
+        let postDict: [String: String] = [
+            "text": text,
+            "date": Date().string(),
+            ]
+        FirebaseDatabaseManager().postNewArcitle(newValue: postDict, vc: self)
     }
     
     @IBAction func onTappedCancel(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
+
+extension InputViewController {
+    func failedGetArcitleArray(message: String) {
+        print(message)
+    }
+    func successPostNewArcitle() {
+        performSegue(withIdentifier: "toReadVC", sender: nil)
+    }
+}
+
+

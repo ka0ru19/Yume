@@ -16,6 +16,9 @@
 		637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A41FD2A8ED00469410 /* ReadViewController.swift */; };
 		637FE0A81FD2C5A600469410 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */; };
 		637FE0AA1FD2C99400469410 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0A91FD2C97500469410 /* GoogleService-Info.plist */; };
+		637FE0AC1FD2CB4700469410 /* FirebaseDatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0AB1FD2CB4700469410 /* FirebaseDatabaseManager.swift */; };
+		637FE0AE1FD2DABF00469410 /* DateFormatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0AD1FD2DABF00469410 /* DateFormatExtension.swift */; };
+		637FE0B01FD2DDCA00469410 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0AF1FD2DDCA00469410 /* DictionaryExtension.swift */; };
 		860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13886008FE00BF8BE73013 /* Pods_Yume.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +34,9 @@
 		637FE0A41FD2A8ED00469410 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
 		637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		637FE0A91FD2C97500469410 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		637FE0AB1FD2CB4700469410 /* FirebaseDatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatabaseManager.swift; sourceTree = "<group>"; };
+		637FE0AD1FD2DABF00469410 /* DateFormatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatExtension.swift; sourceTree = "<group>"; };
+		637FE0AF1FD2DDCA00469410 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.release.xcconfig"; sourceTree = "<group>"; };
 		FD13886008FE00BF8BE73013 /* Pods_Yume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,9 +85,12 @@
 			children = (
 				637FE08E1FD2A7D100469410 /* AppDelegate.swift */,
 				637FE0A71FD2C5A600469410 /* FirebaseAuthManager.swift */,
+				637FE0AB1FD2CB4700469410 /* FirebaseDatabaseManager.swift */,
 				637FE0A01FD2A82B00469410 /* StartViewController.swift */,
 				637FE0A21FD2A8C300469410 /* InputViewController.swift */,
 				637FE0A41FD2A8ED00469410 /* ReadViewController.swift */,
+				637FE0AD1FD2DABF00469410 /* DateFormatExtension.swift */,
+				637FE0AF1FD2DDCA00469410 /* DictionaryExtension.swift */,
 				637FE0921FD2A7D100469410 /* Main.storyboard */,
 				637FE0951FD2A7D100469410 /* Assets.xcassets */,
 				637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */,
@@ -224,11 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				637FE0AE1FD2DABF00469410 /* DateFormatExtension.swift in Sources */,
 				637FE0A31FD2A8C300469410 /* InputViewController.swift in Sources */,
 				637FE08F1FD2A7D100469410 /* AppDelegate.swift in Sources */,
 				637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */,
+				637FE0AC1FD2CB4700469410 /* FirebaseDatabaseManager.swift in Sources */,
 				637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */,
 				637FE0A81FD2C5A600469410 /* FirebaseAuthManager.swift in Sources */,
+				637FE0B01FD2DDCA00469410 /* DictionaryExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
