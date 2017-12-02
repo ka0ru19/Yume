@@ -15,6 +15,8 @@ class InputViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dreamTextView.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
