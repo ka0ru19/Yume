@@ -15,6 +15,7 @@ class ReadViewController: UIViewController {
     
     var postDictArray: [Dictionary<String, AnyObject>] = []
     var index: Int = 0
+    var isLike = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +39,20 @@ class ReadViewController: UIViewController {
     
     
     @IBAction func onTappedNext(_ sender: UIButton) {
-        index += 1
-        display()
+        guard let pid = postDictArray[index]["self-postId"] as? String else { return }
+        FirebaseDatabaseManager().setLooked(pid: pid, isLiked: isLike, vc: self)
+        
+        if index + 1 < postDictArray.count {
+            index += 1
+            display()
+        } else {
+            stopDisplay()
+            sender.isEnabled = false
+        }
     }
     
     @IBAction func onTappedLike(_ sender: UIButton) {
-        
+        isLike = !isLike
     }
     
     func gobackToHome() {
@@ -52,27 +61,22 @@ class ReadViewController: UIViewController {
     
     func setDisplayDict(postDictArray: [Dictionary<String, AnyObject>]) {
         self.postDictArray = postDictArray
-        index = 0
-        display()
-    }
-    
-    func display() {
-        if (index < postDictArray.count) {
-            dreamTextView.text = postDictArray[index]["text"] as? String ?? "no text"
+        if self.postDictArray.count > 0 {
+            display()
         } else {
-            print("indexがpostDictArray.countを超えたよ")
+            stopDisplay()
         }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func display() {
+        isLike = false
+        dreamTextView.text = postDictArray[index]["text"] as? String ?? "no text"
+        
+    }
+    
+    func stopDisplay() {
+        dreamTextView.text = "しばらくしてからまた見てね"
+    }
     
 }
 
@@ -88,6 +92,7 @@ extension ReadViewController {
         
         // 本人のuid
         guard let selfUid = FirebaseDatabaseManager().fireUser?.uid else { return }
+        print(selfUid)
         
         for dict in dictArray {
             // 本人の投稿なら表示しない
@@ -96,9 +101,12 @@ extension ReadViewController {
             
             // 他人の投稿でも既にみた投稿は表示しない
             var isLookedPost = false
-            if let _lookedListArray = dict["looked-list"] as? [AnyObject] {
-                for _lookedList in _lookedListArray {
-                    guard let _lookedUid = _lookedList["uid"] as? String else { continue }
+            if let _lookedListArray = dict["looked-list"]{
+                guard let _lookedListDictArray = _lookedListArray as? [Dictionary<String, AnyObject>] else { return }
+                for _lookedListDict in _lookedListDictArray {
+                    guard let _lookedUid = _lookedListDict["uid"] as? String else { continue }
+                    print("_lookedUid")
+                    print(_lookedUid)
                     if _lookedUid == selfUid {
                         isLookedPost = true
                         break
@@ -120,5 +128,14 @@ extension ReadViewController {
         print(postDictArray)
         
         setDisplayDict(postDictArray: postDictArray)
+    }
+    
+    
+    func failedSetLooked(message: String) {
+        print(message)
+    }
+    
+    func successSetLooked() {
+        
     }
 }

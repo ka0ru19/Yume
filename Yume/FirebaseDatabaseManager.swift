@@ -53,7 +53,7 @@ class FirebaseDatabaseManager {
         // postId-listにpostIdを追加
         userPostIdListRef.childByAutoId().setValue(newKey)
         
-        let newValueWithKey = newValue.union(other: ["uid": uid])
+        let newValueWithKey = newValue.union(other: ["uid": uid]).union(other: ["self-postId": newKey])
         
         let postIdListRef = rootRef.child("post-list")
         postIdListRef.child(newKey).setValue(newValueWithKey, withCompletionBlock: {(error: Error?, ref) in
@@ -65,8 +65,27 @@ class FirebaseDatabaseManager {
                 vc.successPostNewArcitle()
             }
         })
-        
-        
     }
     
+    // MARK: - : 閲覧履歴を更新(postId, いいねしたか否か, vc)
+    func setLooked(pid: String, isLiked: Bool, vc: ReadViewController) {
+        // Firebaseのデータベースにアクセスする下準備
+        guard let uid = fireUser?.uid else { return }
+        let postListRef = rootRef.child("post-list")
+        
+        let dict = [
+            "isLiked": isLiked ? "true" : "false",
+            "uid": uid,
+        ]
+        // リクエストを送信
+        postListRef.child(pid).child("looked-list").childByAutoId().setValue(dict, withCompletionBlock: {(error: Error?, ref) in
+            if let err = error {
+                // 失敗
+                vc.failedSetLooked(message: err.localizedDescription)
+            } else {
+                // 成功
+                vc.successSetLooked()
+            }
+        })
+    }
 }
