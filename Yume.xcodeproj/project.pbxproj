@@ -8,20 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		637FE08F1FD2A7D100469410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE08E1FD2A7D100469410 /* AppDelegate.swift */; };
-		637FE0911FD2A7D100469410 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0901FD2A7D100469410 /* ViewController.swift */; };
 		637FE0941FD2A7D100469410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0921FD2A7D100469410 /* Main.storyboard */; };
 		637FE0961FD2A7D100469410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0951FD2A7D100469410 /* Assets.xcassets */; };
 		637FE0991FD2A7D100469410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */; };
+		637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A01FD2A82B00469410 /* StartViewController.swift */; };
+		637FE0A31FD2A8C300469410 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A21FD2A8C300469410 /* InputViewController.swift */; };
+		637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A41FD2A8ED00469410 /* ReadViewController.swift */; };
+		860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13886008FE00BF8BE73013 /* Pods_Yume.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		637FE08B1FD2A7D100469410 /* Yume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637FE08E1FD2A7D100469410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		637FE0901FD2A7D100469410 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		637FE0931FD2A7D100469410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		637FE0951FD2A7D100469410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		637FE0981FD2A7D100469410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		637FE09A1FD2A7D100469410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		637FE0A01FD2A82B00469410 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		637FE0A21FD2A8C300469410 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		637FE0A41FD2A8ED00469410 /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		637FE0A61FD2AC8900469410 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.debug.xcconfig"; sourceTree = "<group>"; };
+		EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.release.xcconfig"; sourceTree = "<group>"; };
+		FD13886008FE00BF8BE73013 /* Pods_Yume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +38,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27928CEC1C84352000D34B1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD13886008FE00BF8BE73013 /* Pods_Yume.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		637FE0821FD2A7D100469410 = {
 			isa = PBXGroup;
 			children = (
 				637FE08D1FD2A7D100469410 /* Yume */,
 				637FE08C1FD2A7D100469410 /* Products */,
+				CBAA928A7EB8B5103F913516 /* Pods */,
+				27928CEC1C84352000D34B1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +75,25 @@
 			isa = PBXGroup;
 			children = (
 				637FE08E1FD2A7D100469410 /* AppDelegate.swift */,
-				637FE0901FD2A7D100469410 /* ViewController.swift */,
+				637FE0A01FD2A82B00469410 /* StartViewController.swift */,
+				637FE0A21FD2A8C300469410 /* InputViewController.swift */,
+				637FE0A41FD2A8ED00469410 /* ReadViewController.swift */,
 				637FE0921FD2A7D100469410 /* Main.storyboard */,
 				637FE0951FD2A7D100469410 /* Assets.xcassets */,
 				637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */,
 				637FE09A1FD2A7D100469410 /* Info.plist */,
+				637FE0A61FD2AC8900469410 /* GoogleService-Info.plist */,
 			);
 			path = Yume;
+			sourceTree = "<group>";
+		};
+		CBAA928A7EB8B5103F913516 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */,
+				EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +103,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 637FE09D1FD2A7D100469410 /* Build configuration list for PBXNativeTarget "Yume" */;
 			buildPhases = (
+				F6CB11797E5341F95F4EAED3 /* [CP] Check Pods Manifest.lock */,
 				637FE0871FD2A7D100469410 /* Sources */,
 				637FE0881FD2A7D100469410 /* Frameworks */,
 				637FE0891FD2A7D100469410 /* Resources */,
+				1DFB5B98264991438E3C1093 /* [CP] Embed Pods Frameworks */,
+				E2C2D4D2FECDDB5945A63244 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,13 +166,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DFB5B98264991438E3C1093 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yume/Pods-Yume-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2C2D4D2FECDDB5945A63244 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Yume/Pods-Yume-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6CB11797E5341F95F4EAED3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		637FE0871FD2A7D100469410 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				637FE0911FD2A7D100469410 /* ViewController.swift in Sources */,
+				637FE0A31FD2A8C300469410 /* InputViewController.swift in Sources */,
 				637FE08F1FD2A7D100469410 /* AppDelegate.swift in Sources */,
+				637FE0A51FD2A8ED00469410 /* ReadViewController.swift in Sources */,
+				637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,11 +357,13 @@
 		};
 		637FE09E1FD2A7D100469410 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44KX7M22LP;
 				INFOPLIST_FILE = Yume/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.Yume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -287,11 +374,13 @@
 		};
 		637FE09F1FD2A7D100469410 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 44KX7M22LP;
 				INFOPLIST_FILE = Yume/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.Yume;
 				PRODUCT_NAME = "$(TARGET_NAME)";
