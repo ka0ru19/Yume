@@ -33,6 +33,9 @@ class ReadViewController: UIViewController {
     let waittingImageView = UIImageView()
     var bgImageIndex = 0
     var timer = Timer()
+    var sorryImageView = UIImageView()
+    var sorryImageIndex = 0
+    var timerSorry = Timer()
     
     let waittingImageArray: [UIImage] = [
         UIImage(named: "wait01.png")!,
@@ -41,6 +44,10 @@ class ReadViewController: UIViewController {
         UIImage(named: "wait04.png")!,
         ]
     
+    let sorryImageArray: [UIImage] = [
+        UIImage(named: "sorry01.png")!,
+        UIImage(named: "sorry02.png")!,
+    ]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +63,7 @@ class ReadViewController: UIViewController {
         bgImageView.addSubview(waittingImageView)
         self.view.addSubview(bgImageView)
         
-        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(ArchiveViewController.updateImage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(ReadViewController.updateImage), userInfo: nil, repeats: true)
         timer.fire()
         
         
@@ -176,13 +183,29 @@ class ReadViewController: UIViewController {
     
     func stopDisplay() {
         dreamTextView.text = ""
-        let sorryImageView = UIImageView(frame: dreamTextView.frame)
+        sorryImageView = UIImageView(frame: CGRect(x: 0, y: 0,width: 100, height: 80))
+        sorryImageView.center = CGPoint(x: self.view.frame.width / 2,
+                                        y: sorryImageView.center.y - 100)
         sorryImageView.contentMode = .scaleAspectFit
-        sorryImageView.image = UIImage(named: "serif_sorry.png")
         self.view.addSubview(sorryImageView)
+        
+        timerSorry = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(ReadViewController.updateSorryImage), userInfo: nil, repeats: true)
+        timerSorry.fire()
+        
+        let sorryMessageImageView = UIImageView(frame: dreamTextView.frame)
+        sorryMessageImageView.contentMode = .scaleAspectFit
+        sorryMessageImageView.image = UIImage(named: "serif_sorry.png")
+        self.view.addSubview(sorryMessageImageView)
         nextButton.isEnabled = false
     }
     
+    @objc func updateSorryImage() {
+        sorryImageIndex += 1
+        if sorryImageIndex >= 2 {
+            sorryImageIndex = 0
+        }
+        sorryImageView.image = sorryImageArray[sorryImageIndex]
+    }
 }
 
 extension ReadViewController {
