@@ -47,7 +47,7 @@ class ReadViewController: UIViewController {
     let sorryImageArray: [UIImage] = [
         UIImage(named: "sorry01.png")!,
         UIImage(named: "sorry02.png")!,
-    ]
+        ]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -135,9 +135,11 @@ class ReadViewController: UIViewController {
             preDreamTextView.removeFromSuperview()
         })
         
-        guard let pid = postDictArray[index]["self-postId"] as? String else { return }
-        FirebaseDatabaseManager().setLooked(pid: pid, isLiked: isLike, vc: self)
         
+        if index < postDictArray.count {
+            guard let pid = postDictArray[index]["self-postId"] as? String else { return }
+            FirebaseDatabaseManager().setLooked(pid: pid, isLiked: isLike, vc: self)
+        }
         if index + 1 < postDictArray.count {
             index += 1
             display()
@@ -207,7 +209,7 @@ class ReadViewController: UIViewController {
         self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
         self.sorryImageView.frame.size = CGSize(width: 100, height: 80)
         self.sorryImageView.center = CGPoint(x: self.view.frame.width / 2,
-                                        y: dreamTextView.center.y - 100)
+                                             y: dreamTextView.center.y - 100)
         UIView.animate(withDuration: 1.5, animations: {
             self.dreamTextView.alpha = 1.0
             self.dreamImageView.alpha = 1.0
