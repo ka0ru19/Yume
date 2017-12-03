@@ -19,7 +19,10 @@ class ArchiveViewController: UIViewController {
         super.viewDidLoad()
 
         commentTextView.isEditable = false
+        commentTextView.backgroundColor = UIColor.clear // 背景を透明に
         FirebaseDatabaseManager().getRecentPost(vc: self)
+        
+        animateStartButton()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +32,25 @@ class ArchiveViewController: UIViewController {
     
     @IBAction func onTappedHome(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func animateStartButton() {
+        UIView.animate(withDuration: 1.0, animations: {
+            
+            self.commentImageView.frame.origin.y -= 5
+            self.commentImageView.frame.size = CGSize(width: 380, height: 320)
+            self.commentImageView.center.x = self.view.center.x
+            self.commentImageView.alpha = 0.98
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.commentImageView.frame.origin.y += 5
+                self.commentImageView.frame.size = CGSize(width: 360, height: 300)
+                self.commentImageView.center.x = self.view.center.x
+                self.commentImageView.alpha = 0.90
+            }, completion: { _ in
+                self.animateStartButton()
+            })
+        })
     }
     
     func display(dict: Dictionary<String, AnyObject>) {

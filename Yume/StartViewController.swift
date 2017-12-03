@@ -14,13 +14,19 @@ class StartViewController: UIViewController {
     @IBOutlet weak var startImageView: UIImageView! // アニメーションさせる
     @IBOutlet weak var topImageView: UIImageView!
     
-    
+    var isAnimated: Bool!
+    var isReadFirebase: Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
         animateStartButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        isAnimated = false
+        isReadFirebase = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,6 +62,18 @@ class StartViewController: UIViewController {
     
     @IBAction func onTappedStart(_ sender: UIButton) {
         FirebaseAuthManager().signInAnonymously(vc: self)
+        UIView.animate(withDuration: 2.0, animations: {
+            self.startImageView.frame.origin.y -= 5
+            self.startImageView.frame.size = CGSize(width: 600, height: 600)
+            self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 450)
+            self.startImageView.alpha = 0.4
+        },completion: { _ in
+            print("onTappedStart")
+            self.isAnimated = true
+            if self.isReadFirebase {
+                self.performSegue(withIdentifier: "toInputVC", sender: nil)
+            }
+        })
     }
     
     @IBAction func onTappedArchive(_ sender: UIButton) {
@@ -70,6 +88,9 @@ extension StartViewController {
         print(message)
     }
     func successSignInAnonymously() {
-        performSegue(withIdentifier: "toInputVC", sender: nil)
+        isReadFirebase = true
+        if isAnimated {
+            performSegue(withIdentifier: "toInputVC", sender: nil)
+        }
     }
 }
