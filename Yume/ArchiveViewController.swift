@@ -18,7 +18,7 @@ class ArchiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        FirebaseDatabaseManager().getRecentPost(vc: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,5 +28,16 @@ class ArchiveViewController: UIViewController {
     
     @IBAction func onTappedHome(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ArchiveViewController {
+    func faildLoadRecentPost() {
+        
+    }
+    
+    func successLoadRecentPost(dict: Dictionary<String, AnyObject>) {
+        print("successLoadRecentPost")
+        print(dict)
     }
 }
