@@ -196,7 +196,32 @@ class ReadViewController: UIViewController {
         sorryMessageImageView.contentMode = .scaleAspectFit
         sorryMessageImageView.image = UIImage(named: "serif_sorry.png")
         self.view.addSubview(sorryMessageImageView)
+        
         nextButton.isEnabled = false
+        
+        // アニメーション
+        dreamTextView.alpha = 0.2
+        dreamImageView.alpha = 0.2
+        sorryImageView.alpha = 0.2
+        self.dreamImageView.frame.size = CGSize(width: 180, height: 150)
+        self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
+        self.sorryImageView.frame.size = CGSize(width: 100, height: 80)
+        self.sorryImageView.center = CGPoint(x: self.view.frame.width / 2,
+                                        y: dreamTextView.center.y - 100)
+        UIView.animate(withDuration: 1.5, animations: {
+            self.dreamTextView.alpha = 1.0
+            self.dreamImageView.alpha = 1.0
+            self.dreamImageView.frame.size = CGSize(width: 360, height: 300)
+            self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
+            self.sorryImageView.frame.size = CGSize(width: 150, height: 120)
+            self.sorryImageView.center = CGPoint(x: self.view.frame.width / 2,
+                                                 y: self.dreamTextView.center.y - 100)
+            
+        }, completion: { _ in
+            self.nextButton.isEnabled = true
+        })
+        
+        
     }
     
     @objc func updateSorryImage() {
