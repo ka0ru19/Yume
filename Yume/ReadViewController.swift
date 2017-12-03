@@ -183,9 +183,9 @@ class ReadViewController: UIViewController {
     
     func stopDisplay() {
         dreamTextView.text = ""
-        sorryImageView = UIImageView(frame: CGRect(x: 0, y: 0,width: 100, height: 80))
+        sorryImageView = UIImageView(frame: CGRect(x: 0, y: 0,width: 150, height: 120))
         sorryImageView.center = CGPoint(x: self.view.frame.width / 2,
-                                        y: sorryImageView.center.y - 100)
+                                        y: dreamTextView.center.y - 100)
         sorryImageView.contentMode = .scaleAspectFit
         self.view.addSubview(sorryImageView)
         
