@@ -13,7 +13,6 @@ class ReadViewController: UIViewController {
     @IBOutlet weak var dreamImageView: UIImageView!
     @IBOutlet weak var dreamTextView: UITextView!
     
-    
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     
@@ -30,8 +29,36 @@ class ReadViewController: UIViewController {
         }
     }
     
+    let bgImageView = UIImageView()
+    let waittingImageView = UIImageView()
+    var bgImageIndex = 0
+    var timer = Timer()
+    
+    let waittingImageArray: [UIImage] = [
+        UIImage(named: "wait01.png")!,
+        UIImage(named: "wait02.png")!,
+        UIImage(named: "wait03.png")!,
+        UIImage(named: "wait04.png")!,
+        ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bgImageView.frame = self.view.frame
+        bgImageView.image = UIImage(named: "red_bg.png")
+        
+        
+        waittingImageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)
+        waittingImageView.center = bgImageView.center
+        waittingImageView.contentMode = .scaleAspectFit
+        waittingImageView.image = waittingImageArray.first
+        
+        bgImageView.addSubview(waittingImageView)
+        self.view.addSubview(bgImageView)
+        
+        timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(ArchiveViewController.updateImage), userInfo: nil, repeats: true)
+        timer.fire()
+        
         
         dreamTextView.isEditable = false
         dreamTextView.backgroundColor = UIColor.clear
@@ -46,6 +73,14 @@ class ReadViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func updateImage() {
+        bgImageIndex += 1
+        if bgImageIndex >= 4 {
+            bgImageIndex = 0
+        }
+        waittingImageView.image = waittingImageArray[bgImageIndex]
     }
     
     func animateStartButton() {
@@ -166,6 +201,13 @@ extension ReadViewController {
         print(postDictArray)
         
         setDisplayDict(postDictArray: postDictArray)
+        
+        UIView.animate(withDuration: 3.0, animations: {
+            self.bgImageView.alpha = 0.0
+        }, completion: { _ in
+            self.timer.invalidate()
+            self.bgImageView.removeFromSuperview()
+        })
     }
     
     
