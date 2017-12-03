@@ -12,6 +12,7 @@ class InputViewController: UIViewController {
     
     @IBOutlet weak var dreamImageView: UIImageView!
     @IBOutlet weak var dreamTextView: UITextView!
+    @IBOutlet weak var goButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,6 @@ class InputViewController: UIViewController {
     }
     
     @IBAction func onTappedPost(_ sender: UIButton) {
-        
         guard let text = dreamTextView.text else {return}
         if text.characters.count == 0 { return }
         

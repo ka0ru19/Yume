@@ -20,7 +20,7 @@ class ReadViewController: UIViewController {
     
     var postDictArray: [Dictionary<String, AnyObject>] = []
     var index: Int = 0
-    var isLike : Bool! {
+    var isLike : Bool = false {
         didSet {
             if isLike {
                 self.likeButton.setImage(UIImage(named: "isLike1.png"), for: .normal)
@@ -117,7 +117,7 @@ extension ReadViewController {
             // 他人の投稿でも既にみた投稿は表示しない
             var isLookedPost = false
             if let _lookedListArray = dict["looked-list"]{
-                guard let _lookedListDictArray = _lookedListArray as? [Dictionary<String, AnyObject>] else { return }
+                guard let _lookedListDictArray = _lookedListArray as? [Dictionary<String, AnyObject>] else { continue }
                 for _lookedListDict in _lookedListDictArray {
                     guard let _lookedUid = _lookedListDict["uid"] as? String else { continue }
                     print("_lookedUid")
@@ -140,6 +140,7 @@ extension ReadViewController {
             postDictArray.append(tempDictArray[randomNumber])
             tempDictArray.remove(at: randomNumber)
         }
+        print("postDictArray")
         print(postDictArray)
         
         setDisplayDict(postDictArray: postDictArray)

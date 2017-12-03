@@ -57,6 +57,7 @@
                     <connections>
                         <outlet property="startButton" destination="mv3-LO-YNL" id="mVY-hv-cT1"/>
                         <outlet property="startImageView" destination="JPr-vP-cAv" id="dO1-yD-VG7"/>
+                        <outlet property="topImageView" destination="fjF-Oj-inD" id="wfv-7O-NnQ"/>
                         <segue destination="QNI-Oh-nPj" kind="presentation" identifier="toInputVC" id="RsV-GX-CDH"/>
                         <segue destination="bwZ-Zd-NSM" kind="presentation" identifier="toArchiveVC" id="8Iu-aa-eVY"/>
                     </connections>
@@ -185,6 +186,7 @@
                     <connections>
                         <outlet property="dreamImageView" destination="wfY-Xm-6Gr" id="irL-Go-8Q1"/>
                         <outlet property="dreamTextView" destination="9mp-E8-xT7" id="f5i-s8-hIM"/>
+                        <outlet property="goButton" destination="eap-xU-uRO" id="Rsz-LJ-X1C"/>
                         <segue destination="DJh-89-wcp" kind="presentation" identifier="toReadVC" id="G8K-HC-cuq"/>
                     </connections>
                 </viewController>
