@@ -211,6 +211,7 @@ class ReadViewController: UIViewController {
         UIView.animate(withDuration: 1.5, animations: {
             self.dreamTextView.alpha = 1.0
             self.dreamImageView.alpha = 1.0
+            sorryImageView.alpha = 1.0
             self.dreamImageView.frame.size = CGSize(width: 360, height: 300)
             self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
             self.sorryImageView.frame.size = CGSize(width: 150, height: 120)
