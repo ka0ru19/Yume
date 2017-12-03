@@ -110,6 +110,24 @@ class ReadViewController: UIViewController {
     
     
     @IBAction func onTappedNext(_ sender: UIButton) {
+        // 前のviewを上に飛ばす
+        let preDreamImageView = UIImageView(frame: dreamImageView.frame)
+        preDreamImageView.contentMode = .scaleAspectFit
+        preDreamImageView.image = dreamImageView.image
+        let preDreamTextView = UITextView(frame: dreamTextView.frame)
+        preDreamTextView.backgroundColor = UIColor.clear
+        preDreamTextView.text = dreamTextView.text
+        self.view.addSubview(preDreamImageView)
+        self.view.addSubview(preDreamTextView)
+        UIView.animate(withDuration: 2.0, animations: {
+            preDreamImageView.center.y -= 600
+            preDreamImageView.alpha = 0.3
+            preDreamTextView.center.y -= 600
+        }, completion: { _ in
+            preDreamImageView.removeFromSuperview()
+            preDreamTextView.removeFromSuperview()
+        })
+        
         guard let pid = postDictArray[index]["self-postId"] as? String else { return }
         FirebaseDatabaseManager().setLooked(pid: pid, isLiked: isLike, vc: self)
         
@@ -141,12 +159,27 @@ class ReadViewController: UIViewController {
     func display() {
         isLike = false
         dreamTextView.text = postDictArray[index]["text"] as? String ?? "no text"
-        nextButton.isEnabled = true
         
+        dreamTextView.alpha = 0.2
+        dreamImageView.alpha = 0.2
+        self.dreamImageView.frame.size = CGSize(width: 180, height: 150)
+        self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
+        UIView.animate(withDuration: 1.0, animations: {
+            self.dreamTextView.alpha = 1.0
+            self.dreamImageView.alpha = 1.0
+            self.dreamImageView.frame.size = CGSize(width: 360, height: 300)
+            self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 330)
+        }, completion: { _ in
+            self.nextButton.isEnabled = true
+        })
     }
     
     func stopDisplay() {
-        dreamTextView.text = "しばらくしてからまた見てね"
+        dreamTextView.text = ""
+        let sorryImageView = UIImageView(frame: dreamTextView.frame)
+        sorryImageView.contentMode = .scaleAspectFit
+        sorryImageView.image = UIImage(named: "serif_sorry.png")
+        self.view.addSubview(sorryImageView)
         nextButton.isEnabled = false
     }
     
