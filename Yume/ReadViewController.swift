@@ -126,10 +126,10 @@ class ReadViewController: UIViewController {
         preDreamTextView.text = dreamTextView.text
         self.view.addSubview(preDreamImageView)
         self.view.addSubview(preDreamTextView)
-        UIView.animate(withDuration: 2.0, animations: {
-            preDreamImageView.center.y -= 600
+        UIView.animate(withDuration: 1.0, animations: {
+            preDreamImageView.center.y -= 500
             preDreamImageView.alpha = 0.3
-            preDreamTextView.center.y -= 600
+            preDreamTextView.center.y -= 500
         }, completion: { _ in
             preDreamImageView.removeFromSuperview()
             preDreamTextView.removeFromSuperview()
