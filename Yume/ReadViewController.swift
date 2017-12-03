@@ -34,6 +34,7 @@ class ReadViewController: UIViewController {
         super.viewDidLoad()
         
         dreamTextView.isEditable = false
+        dreamTextView.backgroundColor = UIColor.clear
         nextButton.isEnabled = false
         animateStartButton()
         
@@ -111,7 +112,7 @@ class ReadViewController: UIViewController {
     
     func stopDisplay() {
         dreamTextView.text = "しばらくしてからまた見てね"
-        nextButton.isEnabled = true
+        nextButton.isEnabled = false
     }
     
 }
