@@ -73,13 +73,13 @@ class ArchiveViewController: UIViewController {
         UIView.animate(withDuration: 1.0, animations: {
             
             self.commentImageView.frame.origin.y -= 5
-            self.commentImageView.frame.size = CGSize(width: 380, height: 320)
+            self.commentImageView.frame.size = CGSize(width: 375, height: 375)
             self.commentImageView.center.x = self.view.center.x
             self.commentImageView.alpha = 0.98
         }, completion: { _ in
             UIView.animate(withDuration: 1.0, animations: {
                 self.commentImageView.frame.origin.y += 5
-                self.commentImageView.frame.size = CGSize(width: 360, height: 300)
+                self.commentImageView.frame.size = CGSize(width: 360, height: 360)
                 self.commentImageView.center.x = self.view.center.x
                 self.commentImageView.alpha = 0.90
             }, completion: { _ in
@@ -98,12 +98,6 @@ class ArchiveViewController: UIViewController {
                     likeCount += 1
                 }
              }
-//            for lookUid in _lookUidArray {
-//                guard let _lookUidLikedString = lookUid["isLiked"] as? String else {continue}
-//                if _lookUidLikedString == "true" {
-//                    likeCount += 1
-//                }
-//            }
         }
         likeCountLabel.text = String(likeCount)
         
