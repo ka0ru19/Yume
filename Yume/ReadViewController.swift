@@ -286,7 +286,7 @@ extension ReadViewController {
         
         setDisplayDict(postDictArray: postDictArray)
         
-        UIView.animate(withDuration: 3.0, animations: {
+        UIView.animate(withDuration: 1.0, animations: {
             self.bgImageView.alpha = 0.0
         }, completion: { _ in
             self.timer.invalidate()
