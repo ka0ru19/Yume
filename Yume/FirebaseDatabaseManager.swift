@@ -48,7 +48,7 @@ class FirebaseDatabaseManager {
         // リクエストを送信
         recentPostIdRef.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let value = snapshot.value as? String else {
-                //                vc.failedGetArcitleArray(message: "snapshot.valueを[String: AnyObject]に変換できなかったため")
+                vc.faildLoadRecentPost()
                 return // このブロックを抜ける
             }
             print("取得完了: value: -> \(value)")
@@ -57,7 +57,7 @@ class FirebaseDatabaseManager {
             
             postListRef.child(pid).observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let valueDict = snapshot.value as? Dictionary<String, AnyObject> else {
-//                    vc.failedGetArcitleArray(message: "snapshot.valueを[String: AnyObject]に変換できなかったため")
+                    vc.faildLoadRecentPost()
                     return // このブロックを抜ける
                 }
                 print("取得完了: valueArray: -> \(valueDict)")
@@ -65,22 +65,6 @@ class FirebaseDatabaseManager {
                 vc.successLoadRecentPost(dict: valueDict)
             })
         })
-        
-        //        postListRef.observeSingleEvent(of: .value, with: { (snapshot) in
-        //            guard let valueArray = snapshot.value as? [String: AnyObject] else {
-        //                vc.failedGetArcitleArray(message: "snapshot.valueを[String: AnyObject]に変換できなかったため")
-        //                return // このブロックを抜ける
-        //            }
-        //            print("取得完了: valueArray: -> \(valueArray)")
-        //
-        //            var tempDictArray: [Dictionary<String, AnyObject>] = []
-        //            for v in valueArray {
-        //                guard let dict = v.value as? Dictionary<String, AnyObject> else { continue }
-        //                tempDictArray.append(dict)
-        //            }
-        //            vc.successLoadDictArray(dictArray: tempDictArray)
-        //            tempDictArray.removeAll(keepingCapacity: true)
-        //        })
     }
     
     // MARK: - 投稿

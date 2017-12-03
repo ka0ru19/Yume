@@ -18,6 +18,7 @@ class ArchiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        commentTextView.isEditable = false
         FirebaseDatabaseManager().getRecentPost(vc: self)
     }
 
@@ -29,6 +30,28 @@ class ArchiveViewController: UIViewController {
     @IBAction func onTappedHome(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func display(dict: Dictionary<String, AnyObject>) {
+        commentTextView.text = dict["text"] as? String ?? "no text"
+        var likeCount = 0
+        if let lookUidArray = dict["looked-list"] {
+            guard let _lookUidArray = lookUidArray as? [String: AnyObject] else {return}
+            for _lookUid in _lookUidArray {
+                if _lookUid.value["isLiked"] as? String == "true" {
+                    likeCount += 1
+                }
+             }
+//            for lookUid in _lookUidArray {
+//                guard let _lookUidLikedString = lookUid["isLiked"] as? String else {continue}
+//                if _lookUidLikedString == "true" {
+//                    likeCount += 1
+//                }
+//            }
+        }
+        likeCountLabel.text = String(likeCount)
+        
+        
+    }
 }
 
 extension ArchiveViewController {
@@ -39,5 +62,6 @@ extension ArchiveViewController {
     func successLoadRecentPost(dict: Dictionary<String, AnyObject>) {
         print("successLoadRecentPost")
         print(dict)
+        display(dict: dict)
     }
 }
