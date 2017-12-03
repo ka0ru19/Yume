@@ -11,6 +11,8 @@ import UIKit
 class StartViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startImageView: UIImageView! // アニメーションさせる
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,8 @@ class StartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toInputVC" {
             print("InputVCに遷移")
+        } else if segue.identifier == "toArchiveVC" {
+            print("ArchiveVCに遷移")
         }
     }
     
@@ -33,6 +37,10 @@ class StartViewController: UIViewController {
         FirebaseAuthManager().signInAnonymously(vc: self)
     }
     
+    @IBAction func onTappedArchive(_ sender: UIButton) {
+        // 直近の自分の投稿を取得できたら画面遷移
+        performSegue(withIdentifier: "toArchiveVC", sender: nil)
+    }
 }
 
 // MARK: - Firebaseからのレスポンス

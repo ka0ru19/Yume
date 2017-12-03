@@ -13,14 +13,28 @@ class ReadViewController: UIViewController {
     @IBOutlet weak var dreamImageView: UIImageView!
     @IBOutlet weak var dreamTextView: UITextView!
     
+    
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
+    
+    
     var postDictArray: [Dictionary<String, AnyObject>] = []
     var index: Int = 0
-    var isLike = false
+    var isLike : Bool! {
+        didSet {
+            if isLike {
+                self.likeButton.setImage(UIImage(named: "isLike1.png"), for: .normal)
+            } else {
+                self.likeButton.setImage(UIImage(named: "isLike0.png"), for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dreamTextView.isEditable = false
+        nextButton.isEnabled = false
         
         // Do any additional setup after loading the view.
         
@@ -47,7 +61,6 @@ class ReadViewController: UIViewController {
             display()
         } else {
             stopDisplay()
-            sender.isEnabled = false
         }
     }
     
@@ -71,11 +84,13 @@ class ReadViewController: UIViewController {
     func display() {
         isLike = false
         dreamTextView.text = postDictArray[index]["text"] as? String ?? "no text"
+        nextButton.isEnabled = true
         
     }
     
     func stopDisplay() {
         dreamTextView.text = "しばらくしてからまた見てね"
+        nextButton.isEnabled = true
     }
     
 }
