@@ -14,7 +14,6 @@ class StartViewController: UIViewController {
     @IBOutlet weak var startImageView: UIImageView! // アニメーションさせる
     @IBOutlet weak var topImageView: UIImageView!
     
-    var startButtonSizeRate: CGFloat = 1.0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,15 +33,15 @@ class StartViewController: UIViewController {
     func animateStartButton() {
         UIView.animate(withDuration: 1.0, animations: {
             self.topImageView.frame.origin.y -= 5
-            self.startImageView.frame.size = CGSize(width: 50 * self.startButtonSizeRate, height: 50 * self.startButtonSizeRate)
-            self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 450)
+            self.startImageView.frame.size = CGSize(width: 50, height: 50)
+            self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2 + 130)
             self.startImageView.alpha = 1.0
         }, completion: { _ in
             UIView.animate(withDuration: 1.0, animations: {
                 self.topImageView.frame.origin.y += 5
-                self.startImageView.frame.size = CGSize(width: 65 * self.startButtonSizeRate, height: 65 * self.startButtonSizeRate)
-                self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 450)
-                self.startImageView.alpha = 0.7
+                self.startImageView.frame.size = CGSize(width: 65, height: 65)
+                self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: self.view.frame.height / 2 + 130)
+                self.startImageView.alpha = 0.8
             }, completion: { _ in
                 self.animateStartButton()
             })

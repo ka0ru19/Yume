@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		637FE08F1FD2A7D100469410 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE08E1FD2A7D100469410 /* AppDelegate.swift */; };
 		637FE0941FD2A7D100469410 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0921FD2A7D100469410 /* Main.storyboard */; };
-		637FE0961FD2A7D100469410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0951FD2A7D100469410 /* Assets.xcassets */; };
 		637FE0991FD2A7D100469410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */; };
 		637FE0A11FD2A82B00469410 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A01FD2A82B00469410 /* StartViewController.swift */; };
 		637FE0A31FD2A8C300469410 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0A21FD2A8C300469410 /* InputViewController.swift */; };
@@ -40,6 +39,7 @@
 		637FE0DA1FD36C5B00469410 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0D91FD36C5500469410 /* TsukushiAMaruGothic.ttc */; };
 		637FE0DC1FD3770800469410 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0DB1FD3770800469410 /* ArchiveViewController.swift */; };
 		63A9D0FD1FD3B1D7003547EC /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A9D0FC1FD3B1B0003547EC /* up.png */; };
+		63A9D0FF1FD3EE66003547EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63A9D0FE1FD3EE66003547EC /* Assets.xcassets */; };
 		860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13886008FE00BF8BE73013 /* Pods_Yume.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +47,6 @@
 		637FE08B1FD2A7D100469410 /* Yume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		637FE08E1FD2A7D100469410 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637FE0931FD2A7D100469410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		637FE0951FD2A7D100469410 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		637FE0981FD2A7D100469410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		637FE09A1FD2A7D100469410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637FE0A01FD2A82B00469410 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		637FE0D91FD36C5500469410 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
 		637FE0DB1FD3770800469410 /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
 		63A9D0FC1FD3B1B0003547EC /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		63A9D0FE1FD3EE66003547EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.release.xcconfig"; sourceTree = "<group>"; };
 		FD13886008FE00BF8BE73013 /* Pods_Yume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +136,7 @@
 				637FE0AD1FD2DABF00469410 /* DateFormatExtension.swift */,
 				637FE0AF1FD2DDCA00469410 /* DictionaryExtension.swift */,
 				637FE0921FD2A7D100469410 /* Main.storyboard */,
-				637FE0951FD2A7D100469410 /* Assets.xcassets */,
+				63A9D0FE1FD3EE66003547EC /* Assets.xcassets */,
 				637FE0B31FD3191200469410 /* assets */,
 				637FE0971FD2A7D100469410 /* LaunchScreen.storyboard */,
 				637FE09A1FD2A7D100469410 /* Info.plist */,
@@ -262,9 +262,9 @@
 				637FE0D51FD3195900469410 /* wait01.png in Resources */,
 				637FE0AA1FD2C99400469410 /* GoogleService-Info.plist in Resources */,
 				637FE0D71FD3195F00469410 /* wait03.png in Resources */,
-				637FE0961FD2A7D100469410 /* Assets.xcassets in Resources */,
 				637FE0D41FD3195600469410 /* top.png in Resources */,
 				637FE0941FD2A7D100469410 /* Main.storyboard in Resources */,
+				63A9D0FF1FD3EE66003547EC /* Assets.xcassets in Resources */,
 				637FE0D21FD3194D00469410 /* sorry02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
