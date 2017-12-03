@@ -9,20 +9,36 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var startImageView: UIImageView! // アニメーションさせる
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        animateStartButton()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func animateStartButton() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.startImageView.frame.size = CGSize(width: 40, height: 40)
+            self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 420)
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.startImageView.frame.size = CGSize(width: 60, height: 60)
+                self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 420)
+            }, completion: { _ in
+                self.animateStartButton()
+            })
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
