@@ -62,9 +62,9 @@ class StartViewController: UIViewController {
     
     @IBAction func onTappedStart(_ sender: UIButton) {
         FirebaseAuthManager().signInAnonymously(vc: self)
-        UIView.animate(withDuration: 2.0, animations: {
+        UIView.animate(withDuration: 3.0, animations: {
             self.startImageView.frame.origin.y -= 5
-            self.startImageView.frame.size = CGSize(width: 600, height: 600)
+            self.startImageView.frame.size = CGSize(width: 800, height: 800)
             self.startImageView.center = CGPoint(x: self.view.frame.width / 2, y: 450)
             self.startImageView.alpha = 0.4
         },completion: { _ in

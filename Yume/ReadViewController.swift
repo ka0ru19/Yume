@@ -35,6 +35,7 @@ class ReadViewController: UIViewController {
         
         dreamTextView.isEditable = false
         nextButton.isEnabled = false
+        animateStartButton()
         
         // Do any additional setup after loading the view.
         
@@ -45,6 +46,26 @@ class ReadViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func animateStartButton() {
+        UIView.animate(withDuration: 1.0, animations: {
+            
+            self.dreamImageView.frame.origin.y -= 5
+            self.dreamImageView.frame.size = CGSize(width: 380, height: 320)
+            self.dreamImageView.center.x = self.view.center.x
+            self.dreamImageView.alpha = 0.98
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.dreamImageView.frame.origin.y += 5
+                self.dreamImageView.frame.size = CGSize(width: 360, height: 300)
+                self.dreamImageView.center.x = self.view.center.x
+                self.dreamImageView.alpha = 0.90
+            }, completion: { _ in
+                self.animateStartButton()
+            })
+        })
+    }
+    
     
     @IBAction func onTappedHome(_ sender: UIButton) {
         gobackToHome()

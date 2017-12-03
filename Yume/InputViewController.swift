@@ -18,6 +18,8 @@ class InputViewController: UIViewController {
         super.viewDidLoad()
         
         dreamTextView.becomeFirstResponder()
+        dreamTextView.backgroundColor = UIColor.clear
+        animateStartButton()
 
         // Do any additional setup after loading the view.
     }
@@ -31,6 +33,22 @@ class InputViewController: UIViewController {
         if segue.identifier == "toReadVC" {
             print("ReadVCに遷移")
         }
+    }
+    
+    func animateStartButton() {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.dreamImageView.frame.size = CGSize(width: 390, height: 350)
+            self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 200)
+            self.dreamImageView.alpha = 0.98
+        }, completion: { _ in
+            UIView.animate(withDuration: 1.0, animations: {
+                self.dreamImageView.frame.size = CGSize(width: 400, height: 360)
+                self.dreamImageView.center = CGPoint(x: self.view.frame.width / 2, y: 200)
+                self.dreamImageView.alpha = 0.90
+            }, completion: { _ in
+                self.animateStartButton()
+            })
+        })
     }
     
     @IBAction func onTappedPost(_ sender: UIButton) {

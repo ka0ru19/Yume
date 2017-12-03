@@ -39,6 +39,7 @@
 		637FE0D81FD3196300469410 /* wait04.png in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0C51FD3191200469410 /* wait04.png */; };
 		637FE0DA1FD36C5B00469410 /* TsukushiAMaruGothic.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 637FE0D91FD36C5500469410 /* TsukushiAMaruGothic.ttc */; };
 		637FE0DC1FD3770800469410 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637FE0DB1FD3770800469410 /* ArchiveViewController.swift */; };
+		63A9D0FD1FD3B1D7003547EC /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A9D0FC1FD3B1B0003547EC /* up.png */; };
 		860590E196B2C072019C373E /* Pods_Yume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD13886008FE00BF8BE73013 /* Pods_Yume.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		637FE0C51FD3191200469410 /* wait04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wait04.png; sourceTree = "<group>"; };
 		637FE0D91FD36C5500469410 /* TsukushiAMaruGothic.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = TsukushiAMaruGothic.ttc; sourceTree = "<group>"; };
 		637FE0DB1FD3770800469410 /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		63A9D0FC1FD3B1B0003547EC /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		AB280A09F5B9EE0442462A16 /* Pods-Yume.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.debug.xcconfig"; sourceTree = "<group>"; };
 		EE2B2B0F938244943F7E24CA /* Pods-Yume.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yume.release.xcconfig"; path = "Pods/Target Support Files/Pods-Yume/Pods-Yume.release.xcconfig"; sourceTree = "<group>"; };
 		FD13886008FE00BF8BE73013 /* Pods_Yume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 		637FE0B31FD3191200469410 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				63A9D0FC1FD3B1B0003547EC /* up.png */,
 				637FE0B41FD3191200469410 /* archive.png */,
 				637FE0B51FD3191200469410 /* blue_bg.png */,
 				637FE0B61FD3191200469410 /* comment.png */,
@@ -245,6 +248,7 @@
 				637FE0DA1FD36C5B00469410 /* TsukushiAMaruGothic.ttc in Resources */,
 				637FE0991FD2A7D100469410 /* LaunchScreen.storyboard in Resources */,
 				637FE0D11FD3194900469410 /* sorry01.png in Resources */,
+				63A9D0FD1FD3B1D7003547EC /* up.png in Resources */,
 				637FE0C91FD3192700469410 /* comment.png in Resources */,
 				637FE0CA1FD3192900469410 /* commentWithChara.png in Resources */,
 				637FE0D01FD3194700469410 /* serif_sorry.png in Resources */,
