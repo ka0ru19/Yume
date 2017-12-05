@@ -69,6 +69,7 @@ class ReadViewController: UIViewController {
         
         dreamTextView.isEditable = false
         dreamTextView.backgroundColor = UIColor.clear
+        dreamTextView.textAlignment = .center
         nextButton.isEnabled = false
         animateStartButton()
         

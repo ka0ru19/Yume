@@ -46,6 +46,7 @@ class ArchiveViewController: UIViewController {
         timer.fire()
 
         commentTextView.isEditable = false
+        commentTextView.textAlignment = .center
         commentTextView.backgroundColor = UIColor.clear // 背景を透明に
         FirebaseDatabaseManager().getRecentPost(vc: self)
         
